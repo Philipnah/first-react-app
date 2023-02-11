@@ -33,6 +33,11 @@ export default function Board() {
 		console.log("Clicked!");
 	}
 
+	function handleResetClick(){
+		setSquares(Array(9).fill(null));
+		setXIsNext(true);
+	}
+
 	return (
 	<>
 		<div className="status">{status}</div>
@@ -52,6 +57,9 @@ export default function Board() {
 			<Square value={squares[6]} onSquareClick={() => handleClick(6)} />
 			<Square value={squares[7]} onSquareClick={() => handleClick(7)} />
 			<Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+		</div>
+		<div className="reset-button">
+		<button onClick={handleResetClick}>Reset game</button>
 		</div>
 	</>
 	);
